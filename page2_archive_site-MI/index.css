@@ -1,0 +1,269 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --accent-color: #e74c3c;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    margin: 10px 0 0;
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+nav {
+    background-color: var(--secondary-color);
+    padding: 1rem 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+.search-bar {
+    text-align: center;
+    padding: 20px 0;
+    background-color: var(--light-color);
+}
+
+.search-bar img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+main {
+    padding: 20px 0;
+}
+
+.Accueil {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.Accueil h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.category-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+}
+
+.category-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.category-card h3 {
+    padding: 15px;
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.category-card p {
+    padding: 0 15px 15px;
+    margin: 0;
+    color: #666;
+}
+
+.cours-magistraux,
+.td-suj-anna {
+    color: var(--primary-color);
+    margin: 30px 0 20px;
+    text-align: center;
+}
+
+.cours-niveau {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cours-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.cours-item p {
+    background-color:#9edef3
+    margin: 0 0 15px;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+.cours-list {
+    list-style: none;
+    padding: 20px 0; /* Ajusté pour un padding vertical plus modéré */
+    margin: 0;
+    display: flex;
+    gap: 40px; /* Ajoute un espacement horizontal entre les éléments flex */
+    background-color: #ADD8E6; /* Déplacé depuis le style inline */
+}
+
+/* Optionnel : Style pour les sous-listes internes */
+.cours-list ul {
+    list-style: none;
+    padding-left: 20px; /* Marge interne pour les sous-éléments */
+    margin: 0;
+}
+
+/* Style pour les liens */
+.cours-list a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.cours-list a:hover {
+    color: var(--accent-color);
+}
+
+/*
+.cours-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+.cours-list  li {
+    margin-right: 80px; /* Espacement entre Semestre 1 et Semestre 2 */
+    /*background-color:#a9e1f4 
+}*/
+/*
+.cours-list ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.cours-list a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.cours-list a:hover {
+    color: var(--accent-color);
+} */
+
+footer {
+    background-color: var(--dark-color);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+.copyright a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.copyright a:hover {
+    color: var(--accent-color);
+}
+
+nav.sticky {
+    position: fixed;
+    background-color: var(--primary-color);
+    color:#3498db;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Assure que la nav reste au-dessus du contenu */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optionnel : ajoute une ombre pour la lisibilité */
+}
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin: 10px 0;
+    }
+    
+    .cours-item {
+        padding: 15px;
+    }
+}
+
+
+/*style="background-color:#9ebad6;*/
