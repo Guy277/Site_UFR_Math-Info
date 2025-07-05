@@ -1,0 +1,455 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --parcours-color: #27ae60; /* Vert pour Parcours */
+    --archive-color: #8e44ad; /* Violet pour Archive */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header et Navigation */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 0;
+}
+
+.navabar {
+    padding: 10px 20px;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo img {
+    width: 50px;
+    height: auto;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ff4500;
+    transform: scale(1.05);
+}
+
+.menutoggle {
+    display: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+.navabar.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #1f5a42;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+/* Section Accueil */
+.Accueil {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #e9f5f0, #d4e8e0);
+}
+
+.accueil-content h1 {
+    font-size: 3em;
+    color: #2f7656;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.accueil-content p {
+    font-size: 1.3em;
+    color: #555;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Section Présentation */
+/*.Présentation {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.Présentation h1, .Présentation h2 {
+    color: var(--primary-color);
+}
+
+.Présentation ol {
+    list-style-type: none;
+    padding: 0;
+}
+
+.Présentation ol li {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.Présentation ol li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.Présentation img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+}*/
+.Présentation {
+    padding: 20px;
+}
+.Présentation ol{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.Présentation h1, .Présentation h2 {
+    color: var(--primary-color);
+}
+
+.Présentation ol li {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Présentation ol li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.Présentation img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+
+
+/* Section Parcours (Accent particulier) */
+.Parcours {
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.Parcours h2 {
+    color: var(--parcours-color);
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.parcours-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.parcours-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+}
+
+.parcours-item.visible {
+    opacity: 1;
+    animation: slideUp 0.8s ease-in-out;
+}
+
+.parcours-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.parcours-item h3 {
+    color: var(--parcours-color);
+    margin-bottom: 10px;
+}
+
+/* Section Archive (Accent particulier) */
+.Archivre {
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f3e7fa, #d7bde2);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.Archivre h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.archive-btn {
+    display: inline-block;
+    font-size: 2.5em;
+    color: var(--archive-color);
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid var(--archive-color);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.archive-btn:hover {
+    background-color: var(--archive-color);
+    color: white;
+    transform: scale(1.05);
+}
+
+.archive-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.archive-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+}
+
+.archive-item.visible {
+    opacity: 1;
+    animation: slideUp 0.8s ease-in-out;
+}
+
+.archive-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.archive-item ul {
+    margin-top: 10px;
+    list-style: disc;
+    padding-left: 20px;
+}
+
+/* Section Opportunité */
+.Opportunité {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.Opportunité h2 {
+    color: var(--primary-color);
+}
+
+.opportunite-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/*.opportunite-container img {
+    max-width: 100%;
+    height: auto; 
+    border-radius: 5px;
+}*/
+
+/* Section Témoignage */
+.temoignage {
+    background-image: url(./images/bg2.jpg);
+    background-size: cover;
+    padding: 60px 20px;
+}
+
+.titre-blanc {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 40px;
+}
+
+.titre-blanc h2 {
+    font-size: 2.5em;
+}
+
+.titre-blanc span {
+    color: #fb911f;
+}
+
+.temoignage .contenu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.temoignage .contenu .box {
+    width: 340px;
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    animation: slideUp 1s ease-in-out;
+}
+
+.temoignage .contenu .box:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.temoignage .contenu .box .inbox {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 20px;
+}
+
+.temoignage .contenu .box .inbox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.temoignage .contenu .box:hover .inbox img {
+    transform: scale(1.1);
+}
+
+.temoignage .contenu .box .text h3 {
+    color: #fb911f;
+    font-size: 1em;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-color);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.copyright a {
+    color: #f0911f;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.copyright a:hover {
+    color: #ff4500;
+}
+nav.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Assure que la nav reste au-dessus du contenu */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optionnel : ajoute une ombre pour la lisibilité */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: var(--primary-color);
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        margin: 10px 0;
+    }
+
+    .menutoggle {
+        display: block;
+    }
+
+    .accueil-content h1 {
+        font-size: 2em;
+    }
+
+    .temoignage .contenu .box {
+        width: 90%;
+    }
+
+    .parcours-container, .archive-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .Présentation ol li {
+        padding: 15px;
+    }
+
+    .archive-btn {
+        font-size: 1.8em;
+    }
+}
+
+@keyframes slideUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
